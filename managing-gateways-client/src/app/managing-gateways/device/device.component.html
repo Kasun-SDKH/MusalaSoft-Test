@@ -1,0 +1,59 @@
+<app-device-insert></app-device-insert>
+<div class="mt-8"></div>
+<app-generic-list [list]="devices">
+    <ng-container content>
+        <table mat-table #table [dataSource]="devices" class="example-container mat-elevation-z8 table-index">
+            <ng-container matColumnDef="UID">
+                <th mat-header-cell *matHeaderCellDef>UID</th>
+                <td mat-cell style="cursor: pointer;" *matCellDef="let element">
+                    {{element.uid}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Vendor">
+                <th mat-header-cell *matHeaderCellDef>Vendor</th>
+                <td mat-cell style="cursor: pointer;" *matCellDef="let element">
+                    {{ element.vendor}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Date">
+                <th mat-header-cell *matHeaderCellDef>Date</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.date | date}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef>Device Status</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.status? 'Online': 'Offline'}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Actions">
+                <th mat-header-cell *matHeaderCellDef>Actions</th>
+
+                <td mat-cell *matCellDef="let element">
+                    <a mat-raised-button (click)="updateDevice(element)">
+                        Update
+                    </a>
+                    <a mat-raised-button color="warn" (click)="deleteDevice(element)">
+                        Remove
+                    </a>
+
+                    <!-- <button mat-raised-button (click)="checkDetails(element)"> Remove</button> -->
+
+                </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+        </table>
+
+        <mat-paginator color="primary" [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons
+            [length]="totalAmoutOfRecords" [pageSize]="pageSize" (page)="updatePagination($event)">
+        </mat-paginator>
+
+    </ng-container>
+</app-generic-list>

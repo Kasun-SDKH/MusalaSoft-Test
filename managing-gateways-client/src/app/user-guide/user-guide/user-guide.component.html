@@ -1,0 +1,78 @@
+<div class="mx-10">
+    <h2 class="font-bold">Conditions</h2>
+    <p>
+        You have to prepare a solution to the proposed problem in the defined period of time. The solution must comply
+        with
+        the requirements. For anything not explicitly listed, you are free to choose whatever technology/library/tool
+        you
+        feel comfortable with.
+
+    </p>
+    <p>
+        Once ready, you must send a package with the source code of the solution, so it can be built and reviewed by
+        Musala
+        Soft. Instructions how to use the solution must also be provided (resource names, SQL scripts to import test
+        data,
+        other
+        scripts, etc.).
+        If you have completed the task after the deadline has expired, you are still encouraged to submit a solution.
+    </p>
+
+    <h2 class="font-bold">
+        Software Requirements
+    </h2>
+    <ul class="list-disc">
+        <li> Programming language: JavaScript </li>
+        <li>Framework: Node.js/JavaScript + Angular/React</li>
+        <li>Database: MongoDB or in-memory</li>
+        <li>Automated build: Solution of choice</li>
+    </ul>
+
+    <h2 class="font-bold">Description</h2>
+
+    <p>This sample project is managing gateways - master devices that control multiple peripheral devices.
+        Your task is to create a REST service (JSON/HTTP) for storing information about these gateways and their
+        associated
+        devices. This information must be stored in the database.
+        When storing a gateway, any field marked as “to be validated” must be validated and an error returned if it is
+        invalid.
+        Also, no more that 10 peripheral devices are allowed for a gateway.
+        The service must also offer an operation for displaying information about all stored gateways (and their
+        devices)
+        and an
+        operation for displaying details for a single gateway. Finally, it must be possible to add and remove a device
+        from
+        a
+        gateway.</p>
+
+    <h2 class="font-bold">
+        Each gateway has:
+
+    </h2>
+    <ul class="list-disc">
+        <li> a unique serial number (string),</li>
+        <li>human-readable name (string),</li>
+        <li>IPv4 address (to be validated),</li>
+        <li>multiple associated peripheral devices.</li>
+    </ul>
+    <h2 class="font-bold">
+        Each peripheral device has:
+    </h2>
+    <ul class="list-disc">
+        <li> a UID (number),</li>
+        <li>vendor (string),</li>
+        <li>date created,</li>
+        <li>status - online/offline.</li>
+    </ul>
+
+    <h2 class="font-bold"> Other considerations
+
+    </h2>
+    <ul class="list-disc">
+        <li>No User Interface is necessary for the solution.</li>
+        <li>Provide an automated build.</li>
+        <li>Provide basic unit tests (if you have time).</li>
+    </ul>
+
+
+</div>

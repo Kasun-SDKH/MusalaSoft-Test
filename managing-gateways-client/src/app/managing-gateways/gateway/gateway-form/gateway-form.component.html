@@ -1,0 +1,32 @@
+<!-- <form [formGroup]="form" (submit)="submitFormData.emit(form.value)"> -->
+<form [formGroup]="form" (submit)="submitDate()">
+
+
+    <mat-form-field appearance="fill" class="mr-6">
+        <mat-label>Serial Number</mat-label>
+        <input type="text" matInput formControlName="serialNo">
+        <mat-error> Please enter the Serial Number</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="mr-6">
+        <mat-label> Name</mat-label>
+        <input type="text" matInput formControlName="name">
+        <mat-error> Please enter the Name"</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="mr-6">
+        <mat-label> IPv4 Address</mat-label>
+        <input type="text" matInput formControlName="ipAddress">
+        <mat-error> Please enter a valid IPv4 address(192.169.23.12)"</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Device</mat-label>
+        <mat-select formControlName="devices" multiple>
+            <mat-option *ngFor="let device of deviceList" [value]="device.id">{{device.uid}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary" [disabled]="!form.valid"> {{isForUpdate? 'Update' :'Add'}}</button>
+</form>
